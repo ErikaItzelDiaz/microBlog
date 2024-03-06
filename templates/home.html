@@ -20,7 +20,7 @@
 		<main class="main">
 			<section>
 				<h1>Add new entry</h1>
-				<form class="form" action="/entry" method="POST">
+				<form class="form" action="/" method="POST">
 					<p class="form__input">
 						<textarea name="content" id="entry" class="form__textarea" aria-label="Entry Contents"></textarea>
 					</p>
@@ -29,31 +29,33 @@
 			</section>
 			<section>
 				<h1>Recent posts</h1>
-				<article class="entry">
-					<div>
-						<h2 class="entry__title">A bit of a chill day today</h2>
-						<time class="entry__date" datetime="04-03-2024">• Mar 4</time>
-					</div>
-					<p class="entry__content">
-						Today I couldn't do much programing, but that's OK!
-					</p>
-				</article>
+				{% for entry in entries %}
+					<article class="entry">
+						<div>
+							<h2 class="entry__title">{{ entry[0] | truncate(30,true) }}</h2>
+							<time class="entry__date" datetime="{{ entry[1] }}">• {{ entry[2] }}</time>
+						</div>
+						<p class="entry__content">
+							{{ entry[0] }}
+						</p>
+					</article>
+				{% endfor %}
 			</section>
 		</main>
 		<footer class="footer">
 			<div class="footer__content">
 				<section class="left">
-					<a class="footer_item">Made by Erika I. Diaz</a>
-					<a class="footer-item">Check out my other projects</a>
+					<a class="footer__item" href="/">Recent</a>
+					<a class="footer__item" href="/">Calendar</a>
 				</section>
 				<section class="right">
 					<div class="footer__column">
-						<a class="footer_item">Recent</a>
-						<a class="footer-item">Calendar</a>
+						<a class="footer__item" href="https://erikadiaz.dev">Made by Erika I. Diaz</a>
+						<a class="footer__item" href="https://erikadiaz.dev">Checkout my other projects</a>
 					</div>
 					<div class="footer__column">
-						<a class="footer_item">About</a>
-						<a class="footer-item">How this was made</a>
+						<a class="footer__item" href="https://github.com/ErikaItzelDiaz/microBlog/">GitHub</a>
+						<a class="footer__item" href="https://www.linkedin.com/in/eerikaz/">LinkedIn</a>
 					</div>
 				</section>
 			</div>

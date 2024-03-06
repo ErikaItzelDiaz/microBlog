@@ -99,7 +99,7 @@ body{
     font-size: 12px;
 }
 .footer__content{
-    max-with: 640px;
+    max-width: 640px;
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
@@ -127,5 +127,5 @@ body{
     text-decoration: none;
 }
 .footer__item:hover{
-    text=decoration: underline;
+    text-decoration: underline;
 }
