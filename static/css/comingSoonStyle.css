@@ -1,0 +1,33 @@
+:root {
+    --walnut-brown: #6b6054;
+    --battleship-gray: #929487;
+    --ash-gray: #a1b0ab;
+    --tea-green: #c3dac3;
+    --nyanza: #d5ecd4;
+    --mint-cream: #eef4ea;
+}
+html{
+    background-color: var(--mint-cream);
+    text-align: center;
+}
+.navbar{
+    padding: 150px;
+}
+.navbar__logo{
+    width: 75px;
+    height: 75px;
+}
+.landing {
+    font-family: Lato, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.landing__title {
+    color: var(--walnut-brown);
+}
+
+.landing__content {
+    color: var(--ash-gray);
+}

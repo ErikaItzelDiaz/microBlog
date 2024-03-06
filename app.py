@@ -25,7 +25,15 @@ def create_app():
             for entry in app.db.entries.find({})
         ]
         return render_template("home.html",entries=entries_with_date)
+    @app.route("/calendar/")
+    def calendar():
+        return render_template("comingSoon.html")
+    @app.route("/about/")
+    def about():
+        return render_template("about.html")
+
     return app
+
 
 app = create_app()
 
