@@ -42,6 +42,9 @@ body{
     text-decoration: none;
     color: inherit;
 }
+.navbar__link:active ,.navbar__link:hover{
+    color: black;
+}
 .main{
     max-width: 450px;
     margin: 0 auto;
