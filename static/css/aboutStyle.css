@@ -33,3 +33,18 @@ html{
     color: var(--battleship-gray);
     letter-spacing: 0.1rem;
 }
+.footer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding-top: 100px;
+}
+.footer__link{
+  text-decoration: none;
+  color: var(--battleship-gray);
+}
+.footer__link:hover{
+  color: var(--ash-gray);
+}

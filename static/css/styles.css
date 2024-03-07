@@ -51,8 +51,9 @@ body{
     text-decoration: none;
     color: inherit;
 }
-.navbar__link:active, .navbar__link:hover{
+.active, .navbar__link:hover{
     color: var(--battleship-gray);
+    text-decoration: inherit;
 }
 .main{
     max-width: 450px;
