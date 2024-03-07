@@ -63,6 +63,9 @@ Make sure you have the following installed on your machine:
 - Feed: View posts from other users in a centralized feed.
 - User profiles: Explore user profiles and their posts.
 
+## Atributions
+Delete by Hello Supay from <a href="https://thenounproject.com/browse/icons/term/delete/" target="_blank" title="Delete Icons">Noun Project</a> (CC BY 3.0)
+
 ## Contact
 
 If you have any questions or suggestions, feel free to reach out to the project owner:
