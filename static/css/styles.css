@@ -72,9 +72,8 @@ body{
     width: inherit;
     font-size: 18px;
     padding: 12px 20px;
-    border: none;
     background-color: var(--mint-cream);
-    margin-button: 10px;
+    border: 2px solid var(--nyanza);
 }
 .form__submit{
     background-color: var(--tea-green);
@@ -92,6 +91,15 @@ body{
 }
 .entry{
     margin-top: 50px;
+    border: 2px solid var(--nyanza);
+    border-radius: 4px;
+    padding: 5px;
+    background-color: var(--mint-cream);
+}
+.entry__header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .entry__title{
     display: inline;

@@ -30,12 +30,17 @@
 				<h1>Recent posts</h1>
 				{% for entry in entries %}
 					<article class="entry">
-						<div>
-							<h2 class="entry__title">{{ entry[0] | truncate(30,true) }}</h2>
-							<time class="entry__date" datetime="{{ entry[1] }}">• {{ entry[2] }}</time>
+						<div class="entry__header">
+							<h2 class="entry__title">{{ entry[1] | truncate(30,true) }}</h2>
+							<time class="entry__date" datetime="{{ entry[2] }}">• {{ entry[3] }}</time>
+							<form class="entry_trash" action="{{ url_for('delete_entry', entry_id=entry[0]) }}" method="POST">
+							  <label for="delete">
+							    <input type="image" id="delete" src="static/trash.svg" alt="Delete">
+							  </label>
+							</form>
 						</div>
 						<p class="entry__content">
-							{{ entry[0] }}
+							{{ entry[1] }}
 						</p>
 					</article>
 				{% endfor %}
