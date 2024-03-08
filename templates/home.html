@@ -14,18 +14,43 @@
 			</div>
 			<ul class="navbar__navigation">
 				<li class="navbar__navigation-item"><a href="/" class="active">Recent</a></li>
-				<li class="navbar__navigation-item"><a href="/calendar" class="navbar__link">Calendar</a></li>
+				{% if loggedIn %}
+					<li class="navbar__navigation-item"><a href="/logout" class="navbar__link">Log Out</a></li>
+				{% else %}
+					<li class="navbar__navigation-item"><a href="#login" class="navbar__link">Sign In</a></li>
+				{% endif %}
 			</ul>
 		</header>
-		<main class="main">
-			<section>
-				<form class="form" action="/" method="POST">
-					<p class="form__input">
-						<textarea name="content" id="entry" class="form__textarea" aria-label="Entry Contents" placeholder="Enter a post..."></textarea>
-					</p>
-					<button type="submit" class="form__submit">Post</button>
-				</form>
+		{% if not loggedIn %}
+			<section class="login" id="login">
+				<h2 class="login__header">Sign In</h2>
+					{% if alert_message %}
+			            <script>
+			                alert("{{ alert_message }}");
+			            </script>
+			        {% endif %}
+		        <form class="login__form" action="/signin" method="POST">
+		            <label class="login__label" for="username">Username:</label>
+		            <input class="login__input"type="text" id="username" name="username" required>
+		
+		            <label class="login__label" for="password">Password:</label>
+		            <input class="login__input" type="password" id="password" name="password" required>
+		
+		            <button class="login__submit" type="submit">Sign In</button>
+		        </form>
 			</section>
+		{% endif %}
+		<main class="main">
+			{% if loggedIn %}
+				<section>
+					<form class="form" action="/" method="POST">
+						<p class="form__input">
+							<textarea name="content" id="entry" class="form__textarea" aria-label="Entry Contents" placeholder="Enter a post..."></textarea>
+						</p>
+						<button type="submit" class="form__submit">Post</button>
+					</form>
+				</section>
+			{% endif %}
 			<section>
 				<h1>Recent posts</h1>
 				{% for entry in entries %}
@@ -33,11 +58,13 @@
 						<div class="entry__header">
 							<h2 class="entry__title">{{ entry[1] | truncate(30,true) }}</h2>
 							<time class="entry__date" datetime="{{ entry[2] }}">• {{ entry[3] }}</time>
-							<form class="entry_trash" action="{{ url_for('delete_entry', entry_id=entry[0]) }}" method="POST">
-							  <label for="delete">
-							    <input type="image" id="delete" src="static/trash.svg" alt="Delete">
-							  </label>
-							</form>
+							{% if loggedIn %}
+								<form class="entry_trash" action="{{ url_for('delete_entry', entry_id=entry[0]) }}" method="POST">
+								  <label for="delete">
+								    <input type="image" id="delete" src="static/trash.svg" alt="Delete">
+								  </label>
+								</form>
+							{% endif %}
 						</div>
 						<p class="entry__content">
 							{{ entry[1] }}

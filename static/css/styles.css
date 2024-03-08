@@ -55,6 +55,52 @@ body{
     color: var(--battleship-gray);
     text-decoration: inherit;
 }
+.login{
+    display:none;
+}
+.login:target {
+    display: block;
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--mint-cream);
+    border-radius: 8px;
+    box-shadow: 0 0 10px var(--ash-gray);
+}
+
+.login__header{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login__form{
+    display: flex;
+    flex-direction: column;
+}
+
+.login__label{
+    margin-bottom: 10px;
+}
+
+.login__input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid var(--walnut-brown);
+    border-radius: 5px;
+}
+
+.login__submit{
+    padding: 10px 20px;
+    background-color: var(--ash-gray);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login__submit:hover {
+    background-color: var(--battleship-gray);
+}
+
 .main{
     max-width: 450px;
     margin: 0 auto;
