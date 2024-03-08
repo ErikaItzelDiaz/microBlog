@@ -65,6 +65,7 @@ Make sure you have the following installed on your machine:
 
 ## Atributions
 Delete by Hello Supay from <a href="https://thenounproject.com/browse/icons/term/delete/" target="_blank" title="Delete Icons">Noun Project</a> (CC BY 3.0)
+Project inspired by [Jose Salvatierra](https://www.udemy.com/user/josesalvatierra/)
 
 ## Contact
 
