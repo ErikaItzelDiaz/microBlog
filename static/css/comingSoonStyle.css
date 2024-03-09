@@ -31,3 +31,19 @@ html{
 .landing__content {
     color: var(--ash-gray);
 }
+
+@media only screen and (max-width: 980px) {
+    .navbar {
+        padding: 5%;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: none;
+    }
+    .landing {
+        width: 90%;
+        margin: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
