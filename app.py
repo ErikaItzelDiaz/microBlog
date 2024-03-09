@@ -25,7 +25,7 @@ def create_app():
                 entry["_id"],
                 entry["content"],
                 entry["date"],
-                datetime.datetime.strptime(entry["date"], "%y-%m-%d").strftime("%b %d")
+                datetime.datetime.strptime(entry["date"], "%y-%m-%d").strftime("%b %d %Y")
             )
             for entry in app.db.entries.find({})
         ]
